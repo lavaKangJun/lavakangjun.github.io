@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pico — 피아노 코드 찾기</title>
+<meta name="description" content="피아노 코드를 찾아보고 소리로 확인하는 iOS 앱.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎹</text></svg>">
+<style>
+  :root {
+    --bg: #f2f2f7;
+    --card: #ffffff;
+    --text: #11111a;
+    --muted: #6b6b78;
+    --accent: #4550e5;
+    --accent-soft: #e8eafd;
+    --line: #e3e3ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101014;
+      --card: #1b1b21;
+      --text: #f2f2f7;
+      --muted: #9a9aa8;
+      --accent: #7b84ff;
+      --accent-soft: #23253a;
+      --line: #2c2c35;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101014;
+    --card: #1b1b21;
+    --text: #f2f2f7;
+    --muted: #9a9aa8;
+    --accent: #7b84ff;
+    --accent-soft: #23253a;
+    --line: #2c2c35;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Pretendard", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 72px; }
+
+  header { padding: 72px 0 40px; text-align: center; }
+  .mark {
+    width: 84px; height: 84px; margin: 0 auto 20px;
+    display: grid; place-items: center;
+    background: var(--accent); color: #fff;
+    border-radius: 22px;
+    font-size: 42px; font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h1 { margin: 0 0 8px; font-size: 2.1rem; letter-spacing: -0.02em; }
+  .tagline { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  h2 { margin: 0 0 14px; font-size: 1.05rem; letter-spacing: -0.01em; }
+
+  ul.features { margin: 0; padding: 0; list-style: none; }
+  ul.features li {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  ul.features li:last-child { border-bottom: 0; padding-bottom: 0; }
+  ul.features li:first-child { padding-top: 0; }
+  .k {
+    flex: 0 0 auto; min-width: 74px;
+    color: var(--accent); font-weight: 600; font-size: 0.9rem;
+  }
+
+  .langs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .langs span {
+    background: var(--accent-soft); color: var(--accent);
+    padding: 5px 12px; border-radius: 999px;
+    font-size: 0.87rem; font-weight: 600;
+  }
+
+  .cta { text-align: center; margin: 32px 0 8px; }
+  .cta a {
+    display: inline-block;
+    background: var(--accent); color: #fff;
+    text-decoration: none; font-weight: 600;
+    padding: 13px 30px; border-radius: 999px;
+  }
+  .cta .soon {
+    display: inline-block;
+    background: var(--card); color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 13px 30px; border-radius: 999px; font-weight: 600;
+  }
+
+  footer {
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 0.88rem;
+    text-align: center;
+  }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">C</div>
+    <h1>Pico</h1>
+    <p class="tagline">피아노 코드를 찾아보고, 소리로 확인하세요.</p>
+  </header>
+
+  <div class="cta">
+    <!-- 출시 후 App Store 링크로 바꾼다:
+         <a href="https://apps.apple.com/app/idXXXXXXXXXX">App Store에서 받기</a> -->
+    <span class="soon">App Store 출시 준비 중</span>
+  </div>
+
+  <div class="card">
+    <h2>무엇을 하는 앱인가요</h2>
+    <p style="margin:0; color: var(--muted);">
+      코드 이름은 아는데 어떤 건반을 눌러야 할지 모를 때, 반대로 손에 익은 코드의
+      이름이 궁금할 때 쓰는 앱입니다. 12개 음마다 코드를 펼쳐 보여 주고,
+      건반 위에 구성음을 표시하고, 바로 소리로 들려줍니다.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>기능</h2>
+    <ul class="features">
+      <li><span class="k">코드</span><span>12개 루트 × 28가지 코드 성질 — 3화음부터 텐션까지</span></li>
+      <li><span class="k">건반</span><span>구성음을 건반 위에 표시하고 근음을 따로 짚어 줍니다</span></li>
+      <li><span class="k">소리</span><span>동시에 또는 아르페지오로 재생. 옥타브와 전위를 바꿔 가며 확인</span></li>
+      <li><span class="k">표기</span><span>C♯과 D♭처럼 같은 소리의 두 표기를 오갈 수 있습니다</span></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>지원 언어</h2>
+    <div class="langs">
+      <span>한국어</span><span>English</span><span>日本語</span>
+      <span>简体中文</span><span>繁體中文</span>
+    </div>
+  </div>
+
+  <footer>
+    <!-- TODO: 앱스토어 심사에 필요하다. 개인정보 처리방침 페이지를 만들고 링크를 건다.
+         <p><a href="./privacy.html">개인정보 처리방침</a></p> -->
+    <!-- TODO: 문의받을 이메일 주소를 적는다. -->
+    <p>© <span id="year">2026</span> lavaKangJun</p>
+  </footer>
+
+</div>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
